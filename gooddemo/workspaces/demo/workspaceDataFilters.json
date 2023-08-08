@@ -1,3 +1,15 @@
 {
-  "workspaceDataFilters": []
+  "workspaceDataFilters": [
+    {
+      "columnName": "wdf__region",
+      "dataSourceId": "gdc_ds_gooddemo",
+      "id": "wdf__region",
+      "title": "Customer region",
+      "workspace": {
+        "id": "demo",
+        "type": "workspace"
+      },
+      "workspaceDataFilterSettings": []
+    }
+  ]
 }

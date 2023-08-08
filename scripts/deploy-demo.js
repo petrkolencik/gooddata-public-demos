@@ -20,7 +20,7 @@ const main = async () => {
 
     await deployDataSource(
         require(path.resolve(demoPath, 'dataSource', 'dataSource.json')),
-        require(path.resolve(demoPath, 'dataSource', 'pdm.json'))
+        // require(path.resolve(demoPath, 'dataSource', 'pdm.json'))
     );
 
     await Promise.all(workspaces.map(workspaceId => deployWorkspace(
@@ -30,7 +30,7 @@ const main = async () => {
     )));
 };
 
-const deployDataSource = async (dataSource, pdm) => {
+const deployDataSource = async (dataSource) => { // pdm
     const id = dataSource.data.id;
 
     // Patch data source credentials
@@ -39,7 +39,7 @@ const deployDataSource = async (dataSource, pdm) => {
     }
 
     await upsertEntity('/dataSources', id, dataSource);
-    await upsertLayout(`/dataSources/${id}/physicalModel`, pdm);
+    // await upsertLayout(`/dataSources/${id}/physicalModel`, pdm);
 };
 
 const deployWorkspace = async (workspace, ldm, analytics) => {
